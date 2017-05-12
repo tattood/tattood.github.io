@@ -13,6 +13,13 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+		<style type="text/css">
+			#vid-but:hover {
+				opacity: 0.9;
+			}
+
+		</style>
 	</head>
 	<body>
 
@@ -43,10 +50,11 @@
 						</div>
 						<div class="6u$ 12u$(medium) important(medium)">
 							<span class="image fit">
-							<video playsinline autoplay muted loop>
-								<source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
+							<button id="vid-but" style="width: 20%" onclick="myFunction()"><img id="vid-img" src="images/mute.png"></button>
+							<video style="width: 130%" id="vid-vid" playsinline autoplay muted loop>
+								<source src="images/trailer.mp4" type="video/mp4">
+
 							</video>
-								
 							</span>
 						</div>
 					</div>
@@ -86,17 +94,17 @@
 					</header>
 					<div class="row 200%">
 						<div class="4u 12u$(medium)">
-							<span class="image fit"><img src="images/pic05.jpg" alt="" /></span>
+							<span class="image fit"><img src="images/furkan.jpg" alt="" /></span>
 							<h3>Furkan Usta</h3>
 							
 						</div>
 						<div class="4u 12u$(medium)">
-							<span class="image fit"><img src="images/pic05.jpg" alt="" /></span>
+							<span class="image fit"><img src="images/nazli.jpg" alt="" /></span>
 							<h3>Nazlı Özge Uçan</h3>
 							
 						</div>
 						<div class="4u$ 15u$(medium)">
-							<span class="image fit"><img src="images/pic05.jpg" alt="" /></span>
+							<span class="image fit"><img src="images/beril.jpg" alt="" /></span>
 							<h3>Beril Başak Tukaç</h3>
 							
 						</div>
@@ -108,12 +116,12 @@
 							
 						</div>
 						<div class="4u 12u$(medium)">
-							<span class="image fit"><img src="images/pic05.jpg" alt="" /></span>
+							<span class="image fit"><img src="images/anil.jpg" alt="" /></span>
 							<h3>Anıl Sert</h3>
 							
 						</div>
 						<div class="4u$ 12u$(medium)">
-							<span class="image fit"><img src="images/pic05.jpg" alt="" /></span>
+							<span class="image fit"><img src="images/ali.jpg" alt="" /></span>
 							<h3>Ali Onur Geven</h3>
 						</div>
 					</div>
@@ -475,6 +483,23 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+
+			<script type="text/javascript">
+				function myFunction(argument) {
+					var vidBut = document.getElementById("vid-but");
+					var vidVid = document.getElementById("vid-vid");
+					var vidImg = document.getElementById("vid-img");
+
+					if (vidVid.muted) {
+						vidImg.src = "images/speaker.png"
+					 	vidVid.muted = false;
+					}
+					else {
+						vidImg.src = "images/mute.png"
+					 	vidVid.muted = true;
+					}
+				}
+			</script>
 
 	</body>
 </html>
